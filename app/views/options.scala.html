@@ -1,0 +1,18 @@
+@(optionalParam: Option[String], last: String)
+
+@main("Options Page"){
+    <h1>Options Page</h1>
+    <p>This page takes in optional parameters at the end of the URL</p>
+    <p>For simplicity, all non alpha modifiers are modified to spaces</p>
+    <input type="text" id="textbox" placeholder="Enter A Parameter" />
+    <input type="button" value="Go!" onclick=go(document.getElementById('textbox').value) />
+    <p>the parameter entered is "@optionalParam"</p>
+    <script>
+            function go(input) {
+                var optionalAddress = "/options?optionalParam=" + input.replace(/[^A-Za-z]+/g, '+')
+                window.location.href = optionalAddress
+            }
+
+
+    </script>
+}

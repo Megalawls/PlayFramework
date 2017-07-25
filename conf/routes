@@ -3,10 +3,24 @@
 # ~~~~
 
 # Home page
+#Static Path
 GET     /                           controllers.Application.index
+#Static path with reverse redirect
+GET     /index                      controllers.Application.redirectIndex
+GET     /home                       controllers.Application.redirectIndex
 
-# myPage
+# Playing around with scala play
 GET     /myPage                     controllers.Application.myPage
+#Example of TODO page
+GET     /gitGud                     controllers.Application.gitGud
+#Example of Dynamic Page, replace :name with $name<[a-z]+> to ensure only lower case alphas are accepted
+GET     /dynamic/:name              controllers.Application.dynamic(name: String)
+GET     /dynamic/                   controllers.Application.dynamic(name: String ?= "[your name here]")
+GET     /dynamic                    controllers.Application.dynamic(name: String ?= "[your name here]")
+#Example of options page, just use /options?optionalParam=[enter string here] instead of /options
+GET     /options                    controllers.Application.option(optionalParam: Option[String])
+
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

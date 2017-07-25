@@ -1,0 +1,17 @@
+@(name: String, last: String)
+
+@main("This is a Dynamic Page"){
+    <h1>Dynamic Page</h1>
+    <p>This is a Dynamic page, enter your name to have it greet you</p>
+    <input type="text" id="textbox" placeholder="Enter Your Name!" />
+    <input type="button" value="Go!" onclick=go(document.getElementById('textbox').value) />
+    <p>Hello @name!</p>
+    <script>
+        function go(input) {
+            var dynamicAddress = "/dynamic/" + input.replace(/[^A-Za-z]+/g, '')
+            window.location.href = dynamicAddress
+        }
+    </script><br><br><br><br><br>
+
+    <p>Last Page visited was @last </p>
+}

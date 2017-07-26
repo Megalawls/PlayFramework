@@ -8,12 +8,31 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+            th {
+                background-color: #ff71a1;
+                color: white;
+            }
+            tr:nth-child(even){background-color: #fff0f8
+            };
+        </style>
     </head>
     <body>
         <div id="header">
         <ul>
             <li><a class="active" href = "/home">Home Page</a></li>
             <li><a href = "/myPage">My Page</a></li>
+            <li><a href = "/items">Form Submission</a></li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Page Types</a>
                 <div class="dropdown-content">

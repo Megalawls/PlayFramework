@@ -11,6 +11,16 @@ GET     /home                       controllers.Application.redirectIndex
 
 # Playing around with scala play
 GET     /myPage                     controllers.Application.myPage
+
+#Form submission Page
+GET     /items                      controllers.Application.listAll()
+POST    /items                      controllers.Application.createItem()
+GET     /items/:itemName            controllers.Application.search(itemName: String)
+GET     /delete/:cdid               controllers.Application.delete(cdid: Int)
+
+GET     /edit/:cdid                 controllers.Application.edit(cdid: Int)
+POST    /edititem/:cdid             controllers.Application.editItem(cdid: Int)
+
 #Example of TODO page
 GET     /gitGud                     controllers.Application.gitGud
 #Example of Dynamic Page, replace :name with $name<[a-z]+> to ensure only lower case alphas are accepted

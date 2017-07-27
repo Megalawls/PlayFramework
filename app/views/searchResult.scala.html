@@ -1,0 +1,34 @@
+@(items: Seq[item], form: Form[item], itemName: String)(implicit messages: Messages)
+
+@import play.api.data.Form
+@import play.api.data.Forms._
+
+@main("All Items"){
+<h1>Items:</h1>
+<table>
+    <thread>
+        <tr><th width="25">Id</th><th>Name</th><th width="100">Price</th><th width="50"></th><th width="50"></th></tr>
+    </thread>
+    <tbody>
+    @for(item<-items){ @if(item.name.contains(itemName)){
+    <tr><td>@(items.indexOf(item)+1)</td>
+        <td>@item.name</td>
+        <td>@item.price</td>
+        <td><a href="/edit/@items.indexOf(item)">Edit</a></td>
+        <td><a href="/delete/@items.indexOf(item)">Delete</a></td>
+    </tr>
+    }}
+    </tbody>
+</table>
+<br>
+<div class="pink">
+    <br>
+    <h2>Create an Item</h2>
+    @helper.form(routes.Application.createItem()) {
+    @helper.inputText(form("name"))
+    @helper.inputText(form("price"))
+    <button type="submit">Create Item</button>
+    }
+    <br>
+</div>
+}

@@ -8,28 +8,10 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-        <style>
-            table {
-                border-collapse: collapse;
-                width: 90%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            th, td {
-                text-align: left;
-                padding: 8px;
-            }
-            th {
-                background-color: #ff71a1;
-                color: white;
-            }
-            tr:nth-child(even){background-color: #fff0f8
-            };
-        </style>
     </head>
     <body>
         <div id="header">
-        <ul>
+        <ul><div class="floatleft">
             <li><a class="active" href = "/home">Home Page</a></li>
             <li><a href = "/myPage">My Page</a></li>
             <li><a href = "/items">Form Submission</a></li>
@@ -40,11 +22,24 @@
                     <a href="/dynamic">Dynamic Page Example</a>
                     <a href="/A+Page+That+Does+Not+Exist!">Example 404 Page</a>
                     <a href="/gitGud">Example TODO page</a>
-                </div>
+                </div></li>
+             </div>
+            <div class="floatright">
+            <li class="navbar-right"><form style="padding: 15px">
+                <input type="text" id="searchbar" class="searchbox" placeholder="Search for an Item..." required>
+                <input type="button" class="searchbutton" onclick="search()" value="Search">
+            </form></li></div>
         </ul>
         </div>
+        <script>
+            function search() {
+                const searchterm = document.getElementById("searchbar").value
+                const searchuri = "/items/" + searchterm
+                window.location.href = searchuri
+            }
+        </script>
 
-        <div style= padding:20px;height:1500px;>
+        <div style=height:1500px;>
     @content
         </div>
     </body>

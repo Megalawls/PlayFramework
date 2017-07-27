@@ -1,26 +1,10 @@
-@(items: Seq[item], form: Form[item])(implicit messages: Messages)
+@(items: Seq[item], form: Form[item], cdid: Int)(implicit messages: Messages)
 
 @import play.api.data.Form
 @import play.api.data.Forms._
 
 @main("Edit Items") {
-    <h1>Items:</h1>
-    <table>
-        <thread>
-            <tr><th>Id</th><th>Name</th><th>Price</th></tr>
-        </thread>
-        <tbody>
-        @for(item <- items) {
-            <tr><td>@items.indexOf(item)</td>
-                <td>@item.name</td>
-                <td>@item.price</td></tr>
-        }
-        </tbody>
-    </table>
-
-    <hr/>
-
-    @helper.form(routes.Application.editItem()) {
+    @helper.form(routes.Application.editItem(cdid)) {
         @helper.inputText(form("name"))
         @helper.inputText(form("price"))
         <button type="submit">Edit Item</button>

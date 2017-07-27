@@ -3,6 +3,9 @@ body {
     background-color: white;
     font-family: "Calibri", sans-serif;
 }
+h1 {
+    padding:20px;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -22,7 +25,7 @@ li a:hover, .dropdown:hover .dropbtn {
 li a, .dropbtn {
     display: inline-block;
     color: #ffffff;
-    padding: 14px 16px;
+    padding: 15px 17px;
     text-decoration: none;
     text-align: center;
 }
@@ -50,13 +53,58 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+table {
+    border-collapse: collapse;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+th {
+    background-color: #ff71a1;
+    color: white;
+}
+tr:nth-child(even){background-color: #fff0f8
+}
 
-/*li a.active {*/
-    /*background-color: #af4ba3;*/
-    /*color: white;*/
-/*}*/
-/*li a:hover:not(.active) {*/
-    /*background-color: #555;*/
-    /*color: white;*/
-/*}*/
+/*P!nk class*/
+.pink {
+    width: 100%;
+    margin: auto;
+    background-color: #ff7eab;
+    font-family: "Calibri", sans-serif;
+    color: white
+}
 
+/*Navbar floating*/
+.floatleft {
+    float:left;
+}
+.floatright {
+    float:right;
+}
+
+/*Search Bar*/
+.searchbox {
+    background:rgba(50, 50, 50, 0.2);
+    border:0px solid #dbdbdb;
+    font-family: "Calibri", sans-serif;
+    color: white
+
+}
+.searchbutton {
+    position:relative;
+    left:-8px;
+    border:1px solid #b04c70;
+    background-color: #ff7eab;
+    color: #fff0f8;
+    font-family: "Calibri", sans-serif, bold;
+}
+.searchbutton:hover  {
+    background-color:#fafafa;
+    color: #b04c70;
+    font-family: "Calibri", sans-serif, bold;
+}

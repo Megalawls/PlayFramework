@@ -30,7 +30,11 @@ GET     /dynamic                    controllers.Application.dynamic(name: String
 #Example of options page, just use /options?optionalParam=[enter string here] instead of /options
 GET     /options                    controllers.Application.option(optionalParam: Option[String])
 
-
+#Playing with MongoDB
+GET    /create                     controllers.MongoDBController.create()
+GET    /find                       controllers.MongoDBController.findByName()
+GET    /update                     controllers.MongoDBController.update()
+GET    /removeitem                 controllers.MongoDBController.remove()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
